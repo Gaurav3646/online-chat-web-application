@@ -1,0 +1,11 @@
+
+.messages {
+    background-color: aliceblue;
+     height: calc(100% - 160px);
+     padding: 10px;
+     overflow: scroll;
+
+}
+.messages::-webkit-scrollbar {
+    display: none;
+}
