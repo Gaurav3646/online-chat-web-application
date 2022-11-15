@@ -1,11 +1,11 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Chat from "../components/Chat";
-import "./Home.css";
+import classes from "./Home.module.css";
 const Home = () => {
     return (
-        <div className="home">
-            <div className="container">
+        <div className={classes.home}>
+            <div className={classes.container}>
                 <Sidebar />
               <Chat/> 
         </div>

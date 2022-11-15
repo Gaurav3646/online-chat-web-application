@@ -5,7 +5,9 @@
     align-items: center;
     justify-content: center;
 }
-
+.loading {
+  position: absolute;
+}
 .formWrapper {
     color:#e3e3e3;
     background-color:  #455d7a;
@@ -21,7 +23,7 @@
 .logo {
    
     font-weight: bold;
-    font-size: 24px;
+    font-size: 15px;
 
 }
 .title {
@@ -53,6 +55,10 @@
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
+}
+.formWrapper form button:hover {
+    background-color: #f95959e0;
+
 }
 .formWrapper p {
     font-size: 12px;

@@ -1,4 +1,4 @@
-import "./Messages.css";
+import classes from "./Messages.module.css";
 import { doc, onSnapshot } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../context/ChatContext";
@@ -20,10 +20,8 @@ const Messages = () => {
     };
   }, [data.chatId]);
 
-    console.log(messages);
-
   return (
-    <div className="messages">
+    <div className={classes.messages}>
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}

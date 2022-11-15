@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "./Navbar";
 import Search from "./Search";
 import Chats from "./Chats";
-import "./Sidebar.css";
+import classes from "./Sidebar.module.css";
 const Sidebar = () => {
-    return <div className="sidebar">
+    return <div className={classes.sidebar}>
         <Navbar />
         <Search />
         <Chats/>

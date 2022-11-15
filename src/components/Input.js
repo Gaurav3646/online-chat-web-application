@@ -1,5 +1,5 @@
 
-import "./Input.css";
+import classes from "./Input.module.css";
 
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
@@ -24,6 +24,9 @@ const Input = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const handleKey = (e) => {
+    e.code === "Enter" && handleSend();
+  };
   const handleSend = async () => {
     
     setImg(null);
@@ -77,30 +80,34 @@ const Input = () => {
       [data.chatId + ".date"]: serverTimestamp(),
       
     });
-    
+  
    
   };
   return (
-    <div className="input">
+    <div className={classes.input}>
       <input
         type="text"
         value={text}
-        onChange={(e) => setText(e.target.value)}
         placeholder="Something type here....."
+        onKeyDown={handleKey}
+        onChange={(e) => setText(e.target.value)}
+       
        
       />
-      <div className="send">
+      <div className={classes.send}>
         <img src={Attach} alt="" />
         <input
           type="file"
           style={{ display: "none" }}
+        
           id="file"
+        
           onChange={(e) => setImg(e.target.files[0])}
         />
         <label htmlFor="file">
           <img src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend} >Send</button>
       </div>
     </div>
   );

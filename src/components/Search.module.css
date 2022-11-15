@@ -9,6 +9,7 @@
     border: none;
     color:#e3e3e3;
     outline: none;
+    width: 100%;
 
 }
 .searchForm input::placeholder{

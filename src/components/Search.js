@@ -12,8 +12,9 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
-import "./Search.css";
+import classes from "./Search.module.css";
 const Search = () => {
+
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [err, setErr] = useState(false);
@@ -21,6 +22,7 @@ const Search = () => {
   const { currentUser } = useContext(AuthContext);
 
   const handleSearch = async () => {
+
     const q = query(
       collection(db, "users"),
       where("displayName", "==", username)
@@ -73,13 +75,12 @@ const Search = () => {
         });
       }
     } catch (err) {}
-
     setUser(null);
     setUsername("")
   };
   return (
-    <div className="search">
-      <div className="searchForm">
+    <div className={classes.search}>
+      <div className={classes.searchForm}>
         <input
           type="text"
           placeholder="Find a user"
@@ -90,9 +91,9 @@ const Search = () => {
       </div>
       {err && <span>User not found!</span>}
       {user && (
-        <div className="userChat" onClick={handleSelect}>
+        <div className={classes.userChat} onClick={handleSelect}>
           <img src={user.photoURL} alt="" />
-          <div className="userChatInfo">
+          <div className={classes.userChatInfo}>
             <span>{user.displayName}</span>
           </div>
         </div>
